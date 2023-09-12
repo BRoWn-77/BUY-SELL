@@ -1,6 +1,7 @@
 const Home = () => {
     return ( 
         <h1>Buy - Sell</h1>
+        
      );
 }
  

@@ -4,7 +4,7 @@ const Navbar = () => {
     return ( 
         <header>
                 <nav>
-                    <div>
+                    <div className='users'>
                         <Link to='/login'>Login</Link>
                         <Link to='/signup'>Signup</Link>
                     </div>
