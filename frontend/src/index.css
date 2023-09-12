@@ -7,6 +7,7 @@ nav {
 nav a {
   margin-left: 10px;
   text-decoration: none;
+  
 }
 
 form.signup, form.login {
@@ -15,4 +16,24 @@ form.signup, form.login {
   padding: 20px;
   background: #fff;
   border-radius: 4px;
+}
+
+label, input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+form button{
+  background: rgb(137, 137, 235);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+
 }
