@@ -10,6 +10,7 @@ const Signup = () => {
         e.preventDefault()
 
         await signup(email, password)
+        
     }
 
     return ( 
