@@ -55,3 +55,11 @@ form button{
 
 
 }
+
+nav button {
+  background: #fff;
+  color: green;
+  padding: 6px 10px;
+  cursor: pointer;
+  
+}
