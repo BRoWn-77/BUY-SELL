@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import GoodsDetails from '../components/GoodsDetails'
+
 
 const Home = () => {
     const [goods, setGoods] = useState()
@@ -19,7 +21,7 @@ const Home = () => {
     return ( 
         <div className='goods'>
             {goods && goods.map((goods) => (
-                <p key={goods._id}>{goods.name}</p>
+                <GoodsDetails key={goods._id} goods={goods} />
             ))}
         </div>
         
