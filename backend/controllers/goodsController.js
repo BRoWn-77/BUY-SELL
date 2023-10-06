@@ -41,12 +41,47 @@ const createGoods = async (req, res) => {
 
 
 // delete a goods
+const deleteGoods = async (req, res) => {
+    const { id } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such goods'})
+    }
+
+    const goods = await Goods.findOneAndDelete({_id: id})
+
+    if (!goods) {
+        return res.status(400).json({error: 'No such ggods'})
+    }
+
+    res.status(200).json(goods)
+} 
 
 
 // update a goods
+const updateGoods = async (req, res) => {
+    const { id } = req.params
+
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such goods'})
+    }
+
+    const goods = await Goods.findOneAndUpdate({_id: id}, {
+        ...req.body
+    })
+
+    if (!goods) {
+        return res.status(400).json({error: 'No such goods'})
+    }
+
+    res.status(200).json(goods)
+}
+
 
 module.exports = {
     getGoods,
     getsingleGoods,
-    createGoods
+    createGoods,
+    deleteGoods,
+    updateGoods
 }
