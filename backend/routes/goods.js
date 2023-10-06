@@ -1,5 +1,7 @@
 const express = require('express')
-const Goods = require('../models/goodsModel')
+const {
+    createGoods
+} = require('../controllers/goodsController')
 
 const router = express.Router()
 
@@ -14,16 +16,7 @@ router.get('/:id', (req, res) => {
 })
 
 // POST a new goods
-router.post('/', async (req, res) => {
-    const {name, description, price, quantity} = req.body
-
-    try {
-        const goods = await Goods.create({name, description, price, quantity})
-        res.status(200).json(goods)
-    } catch (error) {
-        res.status(400).json({error: error.message})
-    }
-})
+router.post('/', createGoods)
 
 // DELETE a goods
 router.delete('/:id', (req, res) => {
