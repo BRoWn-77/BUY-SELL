@@ -1,19 +1,17 @@
 const express = require('express')
 const {
-    createGoods
+    createGoods,
+    getGoods,
+    getsingleGoods
 } = require('../controllers/goodsController')
 
 const router = express.Router()
 
 // GET all goods 
-router.get('/', (req, res) => {
-    res.json({mssg: 'GET all goods'})
-})
+router.get('/', getGoods)
 
 // GET a single goods
-router.get('/:id', (req, res) => {
-    res.json({mssg:'GET a single goods'})
-})
+router.get('/:id', getsingleGoods)
 
 // POST a new goods
 router.post('/', createGoods)
