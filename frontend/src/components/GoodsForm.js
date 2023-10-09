@@ -1,6 +1,9 @@
 import { useState } from 'react'
+import { useGoodsContext } from '../hooks/useGoodsContext'
 
 const GoodsForm = () => {
+    const {dispatch} = useGoodsContext()
+
     const [name, setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
@@ -32,6 +35,7 @@ const GoodsForm = () => {
             setQuantity('')
             setError(null)
             console.log('new goods added', json)
+            dispatch({type: 'CREATE_GOODS', payload: json})
         }
     }
 

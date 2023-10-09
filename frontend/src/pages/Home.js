@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import GoodsDetails from '../components/GoodsDetails'
 import GoodsForm from '../components/GoodsForm'
+import { useGoodsContext } from '../hooks/useGoodsContext'
 
 const Home = () => {
-    const [goods, setGoods] = useState()
+    const {goods, dispatch} = useGoodsContext()
 
     useEffect(() => {
         const fetchGoods = async () => {
@@ -11,7 +12,7 @@ const Home = () => {
             const json = await response.json()
 
             if (response.ok) {
-                setGoods(json)
+               dispatch({type: 'SET_GOODS', payload: json}) 
             }
         }
 

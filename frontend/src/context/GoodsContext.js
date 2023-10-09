@@ -23,8 +23,8 @@ export const GoodsContextProvider = ({ children }) => {
     })
     
     return (
-        <GoodsContext.Provider value={{state, dispatch}}>
-
+        <GoodsContext.Provider value={{...state, dispatch}}>
+            {children}
         </GoodsContext.Provider>
     )
 }
