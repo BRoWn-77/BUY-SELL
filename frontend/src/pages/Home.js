@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import GoodsDetails from '../components/GoodsDetails'
-
+import GoodsForm from '../components/GoodsForm'
 
 const Home = () => {
     const [goods, setGoods] = useState()
@@ -19,13 +19,17 @@ const Home = () => {
     }, [])
 
     return ( 
-        <div className='goods'>
-            {goods && goods.map((goods) => (
-                <GoodsDetails key={goods._id} goods={goods} />
-            ))}
+        <div className='home'>
+            <div className='goods'>
+                {goods && goods.map((goods) => (
+                    <GoodsDetails key={goods._id} goods={goods} />
+                ))} 
+            </div>
+            <GoodsForm />
         </div>
         
-     );
+        
+     )
 }
  
-export default Home;
+export default Home
